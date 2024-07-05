@@ -1,0 +1,40 @@
+ <!-- Page Heading -->
+ <!-- <h1 class="h3 mb-2 text-gray-800">Member</h1> -->
+ <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+     For more information about DataTables, please visit the</p> -->
+
+ <!-- DataTales Example -->
+ <div class="card shadow mb-4">
+     <div class="card-header py-3">
+         <h6 class="m-0 font-weight-bold text-primary">Book</h6>
+     </div>
+     <div class="card-body">
+         <div class="table-responsive">
+             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                 <thead>
+                     <tr>
+                         <th>Judul</th>
+                         <th>Author</th>
+                         <th>Stock</th>
+                     </tr>
+                 </thead>
+                 <tfoot>
+                     <tr>
+                         <th>Judul</th>
+                         <th>Author</th>
+                         <th>Stock</th>
+                     </tr>
+                 </tfoot>
+                 <tbody>
+                    <% books.forEach(function(item) { %>
+                        <tr class="">
+                            <td> <%= item.title %></td>
+                            <td><%= item.author %></td>
+                            <td><%= item.stock %></td>
+                        </tr>
+                        <% }) %>
+                 </tbody>
+             </table>
+         </div>
+     </div>
+ </div>

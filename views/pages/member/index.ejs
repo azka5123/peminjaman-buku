@@ -1,0 +1,47 @@
+ <!-- Page Heading -->
+ <!-- <h1 class="h3 mb-2 text-gray-800">Member</h1> -->
+ <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+     For more information about DataTables, please visit the</p> -->
+
+ <!-- DataTales Example -->
+ <div class="card shadow mb-4">
+     <div class="card-header py-3">
+         <h6 class="m-0 font-weight-bold text-primary">Member</h6>
+     </div>
+     <div class="card-body">
+         <div class="table-responsive">
+             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                 <thead>
+                     <tr>
+                         <th>Nama</th>
+                         <th>Status</th>
+                         <th>Buku Yang Dipinjam</th>
+                         <th>Action</th>
+                     </tr>
+                 </thead>
+                 <tfoot>
+                     <tr>
+                         <th>Nama</th>
+                         <th>Status</th>
+                         <th>Buku Yang Dipinjam</th>
+                         <th>Action</th>
+                     </tr>
+                 </tfoot>
+                 <tbody>
+                     <% members.forEach(function(item) { %>
+                        <% console.log(item); %>
+                     <tr class="">
+                         <td> <%= item.name %></td>
+                         <td><%= item.status %></td>
+                         <td><%= item.dataValues.booksCount %></td>
+                                                  <td>
+                             <a href="/member/pinjam-buku/<%= item.code %>" class="btn btn-success">Pinjam Buku</a>
+                             <a href="/member/pengembalian-buku/<%= item.code %>" class="btn btn-info">Kembalikan Buku</a>
+                         </td>
+                     </tr>
+                     <% }) %>
+                 </tbody>
+             </table>
+         </div>
+     </div>
+ </div>

@@ -1,0 +1,58 @@
+<!-- Bootstrap core JavaScript-->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/js/sb-admin-2.min.js"></script>
+
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/datatables-demo.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+<script>
+<% if (messages.error && messages.error.length > 0) { %>
+    <% messages.error.forEach(function(message) { %>
+        iziToast.error({
+            title: 'Error',
+            message: '<%= message %>',
+            position: 'topRight'
+        });
+    <% }); %>
+<% } %>
+
+<% if (messages.success && messages.success.length > 0) { %>
+    <% messages.success.forEach(function(message) { %>
+        iziToast.success({
+            title: 'Success',
+            message: '<%= message %>',
+            position: 'topRight'
+        });
+    <% }); %>
+<% } %>
+
+<% if (messages.info && messages.info.length > 0) { %>
+    <% messages.info.forEach(function(message) { %>
+        iziToast.info({
+            title: 'Info',
+            message: '<%= message %>',
+            position: 'topRight'
+        });
+    <% }); %>
+<% } %>
+
+<% if (messages.warning && messages.warning.length > 0) { %>
+    <% messages.warning.forEach(function(message) { %>
+        iziToast.warning({
+            title: 'Warning',
+            message: '<%= message %>',
+            position: 'topRight'
+        });
+    <% }); %>
+<% } %>
+</script>

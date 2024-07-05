@@ -1,0 +1,47 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Pinjam Buku</h6>
+  </div>
+  <div class="card-body">
+      <form id="borrowForm" action="<%= memberCode %>" method="POST">
+          <div class="row ">
+              <div class="col-md-8">
+                  <select name="bookCode[]" class="prompt form-control" id="bookSelect" >
+                  </select>
+              </div>
+              <div class="col-md-4">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </div>
+      </form>
+  </div>
+</div>
+
+<script>
+  var books = <%- JSON.stringify(books) %> ;
+  var maxBooks = <%- maxBooks %> ;
+  console.log(maxBooks);
+
+  var bookData = books.map(book => ({
+      id: book.code,
+      text: book.title,
+      author: book.author
+  }));
+
+  // Initialize Select2 with bookData and other options
+  $("#bookSelect").select2({
+      data: bookData,
+      width: '100%',
+      multiple: true,
+      placeholder: "Enter Book Title",
+      maximumSelectionLength: maxBooks,
+  });
+
+  $("#borrowForm").submit(function(event) {
+      var selectedBooks = $("#bookSelect").val();
+      if (maxBooks === 0 && selectedBooks !== null && selectedBooks.length > 0) {
+          alert("Tidak bisa meminjam buku lagi");
+          event.preventDefault();
+      }
+  });
+</script>
