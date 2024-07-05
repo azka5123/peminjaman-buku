@@ -1,52 +1,17 @@
-Project Name README
-Getting Started
-Follow these steps to get the project up and running on your local machine.
+# Peminajaman-Buku
 
-Installation
-Install dependencies:
+Peminajaman-Buku adalah aplikasi web sederhana untuk mengelola peminjaman buku.
 
-bash
-Copy code
-npm install
-Copy environment file:
+## Instalasi
 
-For development environment:
+1. Clone repositori ini
+2. Buka terminal atau command prompt di direktori proyek
+3. Jalankan perintah `npm install` untuk menginstal dependensi
+4. Salin file `.env.example` menjadi `.env.dev` atau `.env.prod`
+5. Jalankan perintah `npx sequelize db:migrate` untuk migrasi database
+6. Jalankan perintah `npx sequelize-cli db:seed:all` untuk mengisi data awal ke database
+7. Untuk menjalankan aplikasi, gunakan perintah `npm run dev` untuk menjalankan mode development atau `npm run start` untuk menjalankan mode production
 
-bash
-Copy code
-cp .env.example .env.dev
-For production environment:
+## Testing
 
-bash
-Copy code
-cp .env.example .env.prod
-Database Setup
-Run migrations:
-
-bash
-Copy code
-npx sequelize db:migrate
-Seed the database (if applicable):
-
-bash
-Copy code
-npx sequelize-cli db:seed:all
-Running the Application
-Start the application:
-
-For development:
-
-bash
-Copy code
-npm run dev
-For production:
-
-bash
-Copy code
-npm run start
-Running Tests
-To run tests, use the following command:
-
-bash
-Copy code
-npm test
+1. Jalankan perintah `npm test` untuk menjalankan test
